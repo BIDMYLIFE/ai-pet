@@ -1,0 +1,16 @@
+sudo apt install build-essential cmake libopenblas-dev liblapack-dev
+pip install cmake
+pip install dlib
+pip install face_recognition
+
+cd ~/ai-pet/stt/whisper.cpp/samples
+python3 -m venv venv
+source venv/bin/activate
+
+pip install opencv-python numpy
+
+deactivate
+
+sudo apt update
+sudo apt install python3-opencv python3-numpy -y
+
