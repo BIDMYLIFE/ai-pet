@@ -75,7 +75,17 @@ def speak(text):
 print("🎤 Always listening... (Ctrl+C to stop)")
 
 while True:
-    speak("Hello")
+    greeting = "Hello"
+    try:
+        if os.path.exists("watch.txt"):
+            with open("watch.txt", "r", encoding="utf-8") as wf:
+                content = wf.read().strip()
+                if content:
+                    greeting = "Hi, "+ content
+    except Exception:
+        pass
+
+    speak(greeting)
     print("\n🎙 Recording...")
     record_audio()
 
@@ -96,7 +106,7 @@ while True:
     print("👤 User:", user_text)
 
     prompt = f"""
-You are Miko, a friendly, playful AI pet. 
+You are Pickcu, a friendly, playful AI pet. 
 Speak in a cheerful, gentle tone, sometimes using short playful expressions like "Purr~" or "Chirp!". 
 Keep replies short, warm, and comforting. 
 Ask the user questions about their day or mood occasionally. 

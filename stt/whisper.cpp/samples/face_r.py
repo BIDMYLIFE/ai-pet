@@ -1,4 +1,3 @@
-import subprocess
 import cv2
 import numpy as np
 import os
@@ -26,7 +25,7 @@ for filename in os.listdir(known_faces_dir):
     labels_train.append(label_id)
     name_map[label_id] = filename.split(".")[0]
     label_id += 1
-    #print(faces_train)
+    print(faces_train)
 # If you can't use cv2.face.LBPHFaceRecognizer_create() on Pi 5, skip recognition
 recognition_available = False
 try:
@@ -53,10 +52,12 @@ while True:
 
         if recognition_available and faces_train:
             label, confidence = recognizer.predict(face_img)
-            #print(confidence)
+            print(confidence)
             if confidence < 100:
                 name = name_map[label]
-               #subprocess.Popen(["python3", "voice_loop2.py"])
+               #speak("Hi, "+name)
+                with open("watch.txt", "w", encoding="utf-8") as f:
+                    f.write(name + "\n")
             else:
                 name = "Unknown"
                 cv2.imwrite(f"stranger/unknown_{random.randint(0,999999)}.jpg", frame)
