@@ -86,10 +86,10 @@ while True:
     except Exception:
         pass
 
+    ctrl = show_init_frame(gif_path="characters/character0.gif", display_time_ms=3000, frame_delay_ms=100)
     speak(greeting)
     print("\n🎙 Recording...")
     record_audio()
-    ctrl = show_init_frame(gif_path="characters/character0.gif", display_time_ms=3000, frame_delay_ms=100)
     print("📝 Transcribing...")
     run_stt()
 
