@@ -1,0 +1,4 @@
+pi5
+mic
+speaker
+camera
