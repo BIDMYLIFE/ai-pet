@@ -1,0 +1,31 @@
+# AI Pet Requirements for Raspberry Pi 5 with PiCar-X
+# Python dependencies for the AI pet voice assistant project
+
+# PiCar-X robot platform support
+robot-hat>=2.0.0
+picarx>=1.0.0
+
+# Computer vision and face recognition
+opencv-python>=4.5.0
+opencv-contrib-python>=4.5.0
+numpy>=1.19.0
+Pillow>=8.0.0
+
+# GUI and display
+tk>=0.1.0
+
+# Audio processing (if not available via system packages)
+# Note: arecord, pw-play, and ALSA tools should be installed via apt
+pyaudio>=0.2.11
+
+# LLM integration (Ollama is standalone, but we list Python SDK for advanced usage)
+# Note: Ollama itself should be installed separately via curl | sh
+# Note: Whisper.cpp should be built from source
+# Note: Piper TTS should be installed separately
+
+# Optional: GPIO and hardware interfaces
+RPi.GPIO>=0.7.0
+gpiozero>=1.6.0
+
+# Utilities
+psutil>=5.8.0
