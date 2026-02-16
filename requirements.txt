@@ -6,10 +6,12 @@ robot-hat>=2.0.0
 picarx>=1.0.0
 
 # Computer vision and face recognition
-opencv-python>=4.5.0
-opencv-contrib-python>=4.5.0
+# Using patched versions to address CVE-2023-4863
+opencv-python>=4.8.1.78
+opencv-contrib-python>=4.8.1.78
 numpy>=1.19.0
-Pillow>=8.0.0
+# Using patched version to address multiple CVEs
+Pillow>=10.2.0
 
 # GUI and display
 tk>=0.1.0
