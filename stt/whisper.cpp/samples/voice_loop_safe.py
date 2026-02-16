@@ -28,7 +28,11 @@ def run_stt(config):
     """Run speech-to-text transcription using Whisper"""
     whisper_cli = config.get_absolute_path("whisper_cli")
     if not whisper_cli or not os.path.exists(whisper_cli):
-        whisper_cli = "/home/charles/ai-pet/stt/whisper.cpp/build/bin/whisper-cli"
+        # Try finding in the repository structure
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        whisper_cli = os.path.join(script_dir, "../build/bin/whisper-cli")
+        if not os.path.exists(whisper_cli):
+            raise FileNotFoundError(f"Whisper CLI not found. Please build whisper.cpp first.")
     
     whisper_model = config.get("whisper_model")
     
@@ -57,11 +61,19 @@ def speak(text, config):
 
     piper_bin = config.get_absolute_path("piper_bin")
     if not piper_bin or not os.path.exists(piper_bin):
-        piper_bin = "/home/charles/ai-pet/stt/whisper.cpp/piper/piper"
+        # Try finding in the repository structure
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        piper_bin = os.path.join(script_dir, "../piper/piper")
+        if not os.path.exists(piper_bin):
+            raise FileNotFoundError(f"Piper binary not found. Please install Piper TTS first.")
     
     piper_model = config.get_absolute_path("piper_model")
     if not piper_model or not os.path.exists(piper_model):
-        piper_model = "/home/charles/ai-pet/stt/whisper.cpp/piper/models/en_US-lessac-medium.onnx"
+        # Try finding in the repository structure
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        piper_model = os.path.join(script_dir, "../piper/models/en_US-lessac-medium.onnx")
+        if not os.path.exists(piper_model):
+            raise FileNotFoundError(f"Piper model not found. Please download the voice model first.")
     
     piper_out = config.get("piper_out")
 

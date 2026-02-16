@@ -225,9 +225,9 @@ You'll see `[SIM]` tags showing simulated movements.
 
 ## Next Steps
 
-- Read full documentation: [PICARX_SETUP.md](../../../PICARX_SETUP.md)
-- Customize personality in `voice_loop_safe.py` (line 83)
-- Adjust safety distances in `safety.py` (lines 23-24)
+- Read full documentation: [PICARX_SETUP.md](PICARX_SETUP.md)
+- Customize personality in `voice_loop_safe.py` (lines 95-108)
+- Adjust safety distances in `safety.py` (lines 30-31)
 - Add face recognition: run `face_r.py` first to train faces
 - Set up auto-start on boot (see PICARX_SETUP.md)
 
