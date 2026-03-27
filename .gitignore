@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Audio files
+*.wav
+*.mp3
+*.ogg
+
+# Temporary text files
+*.txt
+!requirements.txt
+!*.md
+
+# Config files (keep example)
+config.json
+!config.json.example
+
+# Face recognition data
+stranger/
+known_faces/
+
+# Models (large files)
+*.bin
+*.onnx
+*.caffemodel
+*.pth
+*.pt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test files
+test*.wav
+test*.txt
